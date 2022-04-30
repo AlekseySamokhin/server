@@ -1,7 +1,10 @@
 const http = require("http");
 
+let requestCount = 0;
+
 const server = http.createServer((req, res) => {
-  res.write("HELLO EVERYBODY!!!");
+  requestCount++;
+  res.write("HELLO EVERYBODY!!! " + requestCount);
   res.end();
 });
 
